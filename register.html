@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — Prince Williams Photography</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+<div class="auth-page">
+
+  <!-- Visual Panel -->
+  <div class="auth-visual">
+    <img src="images/portfolio-wedding.jpg" alt="Prince Williams Photography" />
+    <div class="auth-visual-overlay"></div>
+    <div class="auth-visual-content">
+      <div class="auth-brand">Prince Williams</div>
+      <p class="auth-tagline">Create your client account and begin the journey to beautifully captured memories.</p>
+    </div>
+  </div>
+
+  <!-- Form Panel -->
+  <div class="auth-panel">
+    <div class="auth-panel-inner">
+
+      <div class="auth-header">
+        <a href="index.html" class="auth-logo">Prince Williams</a>
+        <h1 class="auth-title">Create Account</h1>
+        <p class="auth-subtitle">Join to access your private client gallery and services.</p>
+      </div>
+
+      <div class="auth-alert" id="reg-alert" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="reg-alert-msg"></span>
+      </div>
+
+      <form class="auth-form" id="reg-form" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="reg-fname">First Name</label>
+            <input type="text" id="reg-fname" class="form-control" placeholder="John" autocomplete="given-name" required />
+            <span class="field-error" id="fname-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-lname">Last Name</label>
+            <input type="text" id="reg-lname" class="form-control" placeholder="Doe" autocomplete="family-name" required />
+            <span class="field-error" id="lname-error"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" class="form-control" placeholder="you@example.com" autocomplete="email" required />
+          <span class="field-error" id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-phone">Phone Number</label>
+          <input type="tel" id="reg-phone" class="form-control" placeholder="+234 800 000 0000" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-wedding">Wedding / Event Date (optional)</label>
+          <input type="date" id="reg-wedding" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-pw">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="reg-pw" class="form-control" placeholder="At least 8 characters" autocomplete="new-password" required />
+            <button type="button" class="input-icon" id="toggle-pw" aria-label="Toggle password visibility">
+              <svg id="eye-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg id="eye-closed" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+          <span class="field-error" id="pw-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-pw2">Confirm Password</label>
+          <input type="password" id="reg-pw2" class="form-control" placeholder="Repeat password" autocomplete="new-password" required />
+          <span class="field-error" id="pw2-error"></span>
+        </div>
+
+        <button type="submit" class="btn-auth" id="reg-btn">
+          <span id="reg-btn-text">Create Account</span>
+          <svg id="reg-spinner" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none; animation:spin .7s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+        </button>
+
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Sign in &rarr;</a></p>
+
+    </div>
+  </div>
+</div>
+
+<style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script>
+  // Redirect if already logged in
+  const _sess = Auth.getSession();
+  if (_sess) window.location.href = _sess.role === 'admin' ? 'admin-dashboard.html' : 'client-dashboard.html';
+
+  document.getElementById('toggle-pw').addEventListener('click', function () {
+    const inp = document.getElementById('reg-pw');
+    const isText = inp.type === 'text';
+    inp.type = isText ? 'password' : 'text';
+    document.getElementById('eye-open').style.display  = isText ? 'block' : 'none';
+    document.getElementById('eye-closed').style.display = isText ? 'none' : 'block';
+  });
+
+  document.getElementById('reg-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const fname   = document.getElementById('reg-fname').value.trim();
+    const lname   = document.getElementById('reg-lname').value.trim();
+    const email   = document.getElementById('reg-email').value.trim();
+    const phone   = document.getElementById('reg-phone').value.trim();
+    const wedding = document.getElementById('reg-wedding').value;
+    const pw      = document.getElementById('reg-pw').value;
+    const pw2     = document.getElementById('reg-pw2').value;
+    const alertEl = document.getElementById('reg-alert');
+
+    // Clear
+    ['fname','lname','email','pw','pw2'].forEach(function(f) {
+      document.getElementById(f+'-error').textContent = '';
+    });
+    alertEl.className = 'auth-alert';
+
+    let valid = true;
+    if (!fname) { document.getElementById('fname-error').textContent = 'First name required.'; valid = false; }
+    if (!lname) { document.getElementById('lname-error').textContent = 'Last name required.'; valid = false; }
+    if (!email || !/\S+@\S+\.\S+/.test(email)) { document.getElementById('email-error').textContent = 'Valid email required.'; valid = false; }
+    if (pw.length < 8)  { document.getElementById('pw-error').textContent = 'Password must be at least 8 characters.'; valid = false; }
+    if (pw !== pw2)     { document.getElementById('pw2-error').textContent = 'Passwords do not match.'; valid = false; }
+    if (!valid) return;
+
+    const btn     = document.getElementById('reg-btn');
+    const spinner = document.getElementById('reg-spinner');
+    const btnText = document.getElementById('reg-btn-text');
+    btn.disabled = true;
+    spinner.style.display = 'block';
+    btnText.textContent = 'Creating account…';
+
+    // Async API call
+    const result = await Auth.register({ name: fname + ' ' + lname, email, phone, password: pw, weddingDate: wedding });
+    if (result.success) {
+      window.location.href = 'client-dashboard.html';
+    } else {
+      alertEl.className = 'auth-alert error';
+      document.getElementById('reg-alert-msg').textContent = result.error;
+      btn.disabled = false;
+      spinner.style.display = 'none';
+      btnText.textContent = 'Create Account';
+    }
+  });
+</script>
+</body>
+</html>

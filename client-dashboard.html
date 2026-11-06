@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard — Prince Williams Photography</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <!-- Paystack inline JS -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body class="dash-page">
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" class="sidebar-brand">Prince Williams</a>
+    <span class="sidebar-role">Client Portal</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <p class="nav-section-label">My Portal</p>
+    <a class="sidebar-link active" data-tab="overview" id="nav-overview">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Overview
+    </a>
+    <a class="sidebar-link" data-tab="selection" id="nav-selection">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      Photo Selection
+      <span class="badge-count" id="badge-selection" style="display:none"></span>
+    </a>
+    <a class="sidebar-link" data-tab="gallery" id="nav-gallery">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      Final Gallery
+      <span class="badge-count" id="badge-gallery" style="display:none"></span>
+    </a>
+    <a class="sidebar-link" data-tab="payments" id="nav-payments">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      Packages &amp; Payment
+    </a>
+    <a class="sidebar-link" data-tab="chat" id="nav-chat">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Chat with Us
+      <span class="badge-count" id="badge-chat" style="display:none"></span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="user-avatar" id="sb-avatar">PW</div>
+      <div class="user-info">
+        <p class="user-name"  id="sb-name">Loading…</p>
+        <p class="user-email" id="sb-email">—</p>
+      </div>
+    </div>
+    <button class="btn-logout" onclick="Auth.logout()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Sign Out
+    </button>
+  </div>
+</aside>
+
+<!-- ═══ MAIN WRAP ═══ -->
+<div class="main-wrap">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <button class="topbar-hamburger" id="hamburger" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <span class="topbar-title" id="topbar-title">Overview</span>
+    <div class="topbar-spacer"></div>
+    <span class="topbar-greeting">Welcome, <strong id="topbar-name">—</strong></span>
+  </header>
+
+  <!-- Content -->
+  <div class="dash-content">
+
+    <!-- ── OVERVIEW TAB ── -->
+    <div class="tab-panel active" id="tab-overview">
+      <div class="stats-grid">
+        <div class="stat-tile">
+          <div class="stat-icon purple">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <p class="stat-value" id="stat-unedited">0</p>
+            <p class="stat-label">Photos to Select</p>
+          </div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-icon green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <div>
+            <p class="stat-value" id="stat-final">0</p>
+            <p class="stat-label">Final Photos Ready</p>
+          </div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-icon blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div>
+            <p class="stat-value" id="stat-payments">0</p>
+            <p class="stat-label">Payments Made</p>
+          </div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-icon orange">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <p class="stat-value" id="stat-messages">0</p>
+            <p class="stat-label">Unread Messages</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Welcome card -->
+      <div class="card" style="margin-bottom:1.5rem;">
+        <div class="card-body" style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+          <img src="images/portfolio-engagement.jpg" alt="" style="width:120px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;" />
+          <div>
+            <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;margin-bottom:.4rem;">Your story is being crafted ✨</h2>
+            <p style="font-size:.87rem;color:var(--gray-600);line-height:1.7;max-width:40rem;">
+              Welcome to your private client portal. Here you can browse and select photos for editing, download your finished gallery, choose a package and make payment, and chat directly with Prince Williams.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent activity -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Recent Activity</h3>
+        </div>
+        <div class="card-body" id="activity-list">
+          <p style="font-size:.85rem;color:var(--gray-500);">No recent activity yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SELECTION TAB ── -->
+    <div class="tab-panel" id="tab-selection">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Photo Selection</h3>
+            <p style="font-size:.8rem;color:var(--gray-500);margin-top:.2rem;">Select the photos you'd like edited. <strong>Downloading is not available</strong> for this preview gallery.</p>
+          </div>
+          <span class="pill success" id="selection-submitted-badge" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Submitted
+          </span>
+        </div>
+        <div class="card-body">
+          <div class="gallery-toolbar">
+            <p class="gallery-count"><strong id="sel-count">0</strong> selected of <strong id="sel-total">0</strong> photos</p>
+            <div class="gallery-actions">
+              <button class="btn btn-outline btn-sm" id="sel-clear-btn" onclick="DashApp.clearSelection()">Clear All</button>
+            </div>
+          </div>
+          <div class="photo-grid" id="selection-grid">
+            <div class="empty-state" style="grid-column:1/-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <h3>No photos yet</h3>
+              <p>Your photographer will send preview photos here for you to choose which ones to edit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sticky selection bar -->
+      <div class="selection-bar" id="selection-bar">
+        <p><strong id="sel-bar-count">0</strong> photos selected</p>
+        <div class="selection-bar-actions">
+          <button class="btn btn-outline btn-sm" style="color:#fff;border-color:rgba(255,255,255,.3)" onclick="DashApp.clearSelection()">Clear</button>
+          <button class="btn btn-success" id="submit-sel-btn" onclick="DashApp.submitSelection()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Submit Selection
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FINAL GALLERY TAB ── -->
+    <div class="tab-panel" id="tab-gallery">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Final Gallery</h3>
+            <p style="font-size:.8rem;color:var(--gray-500);margin-top:.2rem;">Your fully edited photos — ready to download in full quality.</p>
+          </div>
+          <button class="btn btn-black btn-sm" id="download-all-btn" onclick="DashApp.downloadAll()" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download All
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="photo-grid" id="final-grid">
+            <div class="empty-state" style="grid-column:1/-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <h3>No final photos yet</h3>
+              <p>Your edited photos will appear here once your photographer has finished editing them.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAYMENTS TAB ── -->
+    <div class="tab-panel" id="tab-payments">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;margin-bottom:.5rem;">Choose Your Package</h2>
+      <p style="font-size:.87rem;color:var(--gray-600);margin-bottom:2rem;">Select the package that fits your vision. Secure payment powered by Paystack.</p>
+      <div class="packages-grid" id="packages-grid"></div>
+
+      <!-- Payment history -->
+      <div class="card" style="margin-top:2.5rem;">
+        <div class="card-header">
+          <h3 class="card-title">Payment History</h3>
+        </div>
+        <div class="card-body" id="payment-history" style="padding:0;">
+          <div class="empty-state" style="padding:3rem 2rem;">
+            <h3>No payments yet</h3>
+            <p>Your payment receipts will appear here after a successful transaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CHAT TAB ── -->
+    <div class="tab-panel" id="tab-chat">
+      <div class="chat-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar">PW</div>
+          <div>
+            <p class="chat-name">Prince Williams</p>
+            <p class="chat-status">Online</p>
+          </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="msg-date-divider">Today</div>
+          <div class="msg-wrap">
+            <div class="msg-avatar-sm">PW</div>
+            <div>
+              <div class="msg-bubble">Hi there! 👋 Welcome to your client portal. Feel free to ask me anything about your session, packages, or gallery.</div>
+              <span class="msg-time">Just now</span>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <textarea class="chat-input" id="chat-input" rows="1" placeholder="Type a message…" aria-label="Chat message"></textarea>
+          <button class="chat-send-btn" id="chat-send" onclick="DashApp.sendChat()" aria-label="Send">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /dash-content -->
+</div><!-- /main-wrap -->
+
+<!-- Receipt Modal -->
+<div class="modal-backdrop" id="receipt-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Payment Receipt</h3>
+      <button class="modal-close" onclick="DashApp.closeReceipt()" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="receipt-body"></div>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- Sidebar overlay (mobile) -->
+<div id="sidebar-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:150;" onclick="DashApp.closeSidebar()"></div>
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script src="backend.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

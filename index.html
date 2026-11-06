@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prince Williams - Luxury Wedding Photography</title>
+  <meta name="description" content="Prince Williams captures timeless, authentic love stories through cinematic wedding and engagement photography. Based in Lagos, available worldwide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== COOKIE BANNER ===== -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p class="font-montserrat">We use cookies to enhance your experience. By continuing, you agree to our <a href="#" class="underline">Privacy Policy</a>.</p>
+      <div class="cookie-actions">
+        <button id="cookie-accept" class="btn-cookie-accept">Accept</button>
+        <button id="cookie-decline" class="btn-cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo" id="logo-link">
+        <span class="logo-text font-cormorant">Prince Williams</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="desktop-menu">
+        <li><a href="#home" class="nav-link">home</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-link nav-dropdown-toggle" id="info-toggle">
+            information <span class="chevron">▾</span>
+          </button>
+          <div class="dropdown-menu" id="info-dropdown">
+            <a href="#about" class="dropdown-item">about us</a>
+            <a href="#faqs" class="dropdown-item">faqs</a>
+            <a href="#blog" class="dropdown-item">blog</a>
+            <a href="#testimonials" class="dropdown-item">wedding stories</a>
+            <a href="#approach" class="dropdown-item">our approach</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-link nav-dropdown-toggle" id="portfolio-toggle">
+            portfolio <span class="chevron">▾</span>
+          </button>
+          <div class="dropdown-menu" id="portfolio-dropdown">
+            <a href="#portfolio" class="dropdown-item">wedding</a>
+            <a href="#portfolio" class="dropdown-item">engagement</a>
+          </div>
+        </li>
+        <li><a href="#contact" class="nav-link">contact</a></li>
+        <li><a href="#shop" class="nav-link">shop</a></li>
+      </ul>
+
+      <!-- Theme + Hamburger -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav-login font-montserrat" id="nav-login-btn">Client Login
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button id="hamburger" class="hamburger-btn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div id="mobile-menu" class="mobile-menu">
+    <button id="mobile-close" class="mobile-close-btn" aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <ul class="mobile-nav-list">
+      <li><a href="login.html" class="mobile-nav-link" style="color:var(--text);font-weight:700;">⚡ Client Login</a></li>
+      <li><a href="#home" class="mobile-nav-link">home</a></li>
+      <li><a href="#about" class="mobile-nav-link">about us</a></li>
+      <li><a href="#portfolio" class="mobile-nav-link">portfolio</a></li>
+      <li><a href="#blog" class="mobile-nav-link">blog</a></li>
+      <li><a href="#faqs" class="mobile-nav-link">faqs</a></li>
+      <li><a href="#testimonials" class="mobile-nav-link">wedding stories</a></li>
+      <li><a href="#contact" class="mobile-nav-link">contact</a></li>
+      <li><a href="#shop" class="mobile-nav-link">shop</a></li>
+    </ul>
+  </div>
+  <div id="mobile-overlay" class="mobile-overlay"></div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="page-content">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg">
+        <img src="images/hero.jpg" alt="Prince Williams Wedding Photography" class="hero-img" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <span class="hero-badge font-montserrat">Capturing Love Stories Since Over A Decade</span>
+        <h1 class="hero-title font-cormorant">Prince Williams</h1>
+        <p class="hero-subtitle font-montserrat">Telling authentic, timeless love stories through captivating photography.</p>
+        <a href="#contact" class="btn-hero font-montserrat">
+          Contact Us
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+      <div class="hero-scroll-hint">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </section>
+
+    <!-- ===== PRESS / FEATURED IN ===== -->
+    <section class="press-section">
+      <p class="press-label font-montserrat">Featured In</p>
+      <div class="press-logos">
+        <div class="press-logo font-cormorant">BellaNaija Weddings</div>
+        <div class="press-logo font-cormorant">Brides Magazine</div>
+        <div class="press-logo font-cormorant">The Knot</div>
+        <div class="press-logo font-cormorant">BlackBride</div>
+        <div class="press-logo font-cormorant">Hitched</div>
+        <div class="press-logo font-cormorant">Wezoree</div>
+        <div class="press-logo font-cormorant">PhiLoves</div>
+        <div class="press-logo font-cormorant">Bold Journey</div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT US SECTION ===== -->
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <h2 class="section-heading font-cormorant">About Us</h2>
+        <p class="about-text font-montserrat">
+          We are Prince Williams Photography — a boutique wedding and portrait studio dedicated to the art of storytelling. Based in Lagos, Nigeria, and available worldwide, we believe every love story is unique, and we are committed to capturing yours with intention, artistry, and heart. Our photographs are not just images — they are heirlooms, crafted to be treasured for generations.
+        </p>
+        <a href="#contact" class="btn-primary font-montserrat">
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="portfolio-inner">
+        <div class="portfolio-text">
+          <h2 class="portfolio-heading font-cormorant">Portfolio</h2>
+          <p class="portfolio-desc font-montserrat">
+            From intimate elopements to grand celebrations, our portfolio reflects a deep commitment to authentic storytelling. Each image is a carefully composed chapter of your unique love story — emotional, timeless, and completely yours.
+          </p>
+          <a href="#contact" class="btn-portfolio font-montserrat">
+            View All
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card group">
+            <img src="images/portfolio-wedding.jpg" alt="Wedding Photography" class="portfolio-card-img" />
+            <div class="portfolio-card-badge font-montserrat">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Wedding
+            </div>
+          </div>
+          <div class="portfolio-card group">
+            <img src="images/portfolio-engagement.jpg" alt="Engagement Photography" class="portfolio-card-img" />
+            <div class="portfolio-card-badge font-montserrat">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+              Engagement
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG SECTION ===== -->
+    <section id="blog" class="blog-section">
+      <div class="blog-container">
+        <div class="blog-header">
+          <h2 class="section-heading font-cormorant">The Blog</h2>
+          <a href="#blog" class="blog-visit-link font-montserrat">
+            Visit Blog
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <div class="blog-grid">
+          <!-- Featured Post -->
+          <div class="blog-card blog-card-featured group">
+            <img src="images/blog-1.jpg" alt="The Art of Wedding Day Details" class="blog-card-img" />
+            <div class="blog-card-overlay"></div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-badge font-montserrat">June 12, 2026</span>
+                <span class="blog-badge font-montserrat">8 min read</span>
+              </div>
+              <h3 class="blog-card-title font-montserrat">The Art of Wedding Day Details — Why the Small Things Matter Most</h3>
+              <p class="blog-card-excerpt font-montserrat">From the delicate lace on a bridal gown to the handwritten vows tucked in a pocket, the details of a wedding day tell a story all their own. Here's why we always slow down to capture them.</p>
+            </div>
+          </div>
+          <!-- Small Post 1 -->
+          <div class="blog-card blog-card-small group">
+            <img src="images/blog-2.jpg" alt="Getting Ready Guide" class="blog-card-img" />
+            <div class="blog-card-overlay"></div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-badge font-montserrat">May 3, 2026</span>
+                <span class="blog-badge font-montserrat">5 min read</span>
+              </div>
+              <h3 class="blog-card-title font-montserrat">Your Complete Getting-Ready Timeline for Flawless Photos</h3>
+            </div>
+          </div>
+          <!-- Small Post 2 -->
+          <div class="blog-card blog-card-small group">
+            <img src="images/about.jpg" alt="Choosing a Photographer" class="blog-card-img" />
+            <div class="blog-card-overlay"></div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-badge font-montserrat">Apr 18, 2026</span>
+                <span class="blog-badge font-montserrat">6 min read</span>
+              </div>
+              <h3 class="blog-card-title font-montserrat">How to Choose a Wedding Photographer Who Truly Gets You</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQs SECTION ===== -->
+    <section id="faqs" class="faqs-section">
+      <div class="faqs-container">
+        <div class="faqs-left">
+          <h2 class="section-heading font-cormorant">FAQs</h2>
+          <p class="faqs-subtitle font-montserrat">We've got answers to most of your questions! or <a href="#contact" class="underline">Contact Us</a></p>
+          <a href="#faqs" class="btn-primary font-montserrat faqs-desktop-btn">
+            All FAQs
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <div class="faqs-right">
+          <div class="faq-accordion">
+
+            <div class="faq-item">
+              <button class="faq-toggle font-montserrat" id="faq-1-btn" aria-expanded="false" aria-controls="faq-1">
+                DO YOU TRAVEL?
+                <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer font-montserrat" id="faq-1">
+                <p>Absolutely! We are based in Lagos, Nigeria, but are available for weddings and sessions across Africa, Europe, the UK, North America, and beyond. Travel fees apply depending on location — please reach out and we'll put together a custom quote for your destination.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-toggle font-montserrat" id="faq-2-btn" aria-expanded="false" aria-controls="faq-2">
+                HOW MUCH DO YOU EDIT YOUR PHOTOS?
+                <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer font-montserrat" id="faq-2">
+                <p>We believe in authentic, timeless editing — we enhance the natural beauty of each image without heavy filters or over-processing. Our edits focus on colour balance, light, and tone, keeping your photos looking true to life while maintaining a refined, editorial feel.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-toggle font-montserrat" id="faq-3-btn" aria-expanded="false" aria-controls="faq-3">
+                HOW FAR IN ADVANCE SHOULD WE REACH OUT TO BOOK?
+                <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer font-montserrat" id="faq-3">
+                <p>We recommend reaching out at least 6–12 months before your wedding date, especially for peak season dates (November–April). That said, we do occasionally have last-minute availability, so don't hesitate to enquire even if your date is soon.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-toggle font-montserrat" id="faq-4-btn" aria-expanded="false" aria-controls="faq-4">
+                HOW DO WE BOOK YOU?
+                <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer font-montserrat" id="faq-4">
+                <p>Simply fill out the contact form on our website, and we'll get back to you within 48 hours to schedule a discovery call. A signed contract and retainer deposit secures your date. We make the process as smooth and stress-free as possible!</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-toggle font-montserrat" id="faq-5-btn" aria-expanded="false" aria-controls="faq-5">
+                HOW BIG IS YOUR TEAM?
+                <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer font-montserrat" id="faq-5">
+                <p>Prince Williams Photography is a boutique studio led by Prince Williams himself as Lead Photographer. Depending on your wedding size, we bring one or two carefully selected associate photographers to ensure every moment is beautifully covered.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="testimonials-container">
+        <h2 class="section-heading font-cormorant" style="text-align:center; margin-bottom: 3rem;">Testimonials</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial-quote font-montserrat" id="testimonial-text">
+            <blockquote id="testimonial-blockquote">
+              "Prince Williams captured our wedding day with such artistry and warmth. Every photo tells the story of how we felt — the joy, the tears, the laughter. We can't stop looking at them. He truly is a master of his craft."
+            </blockquote>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/photographer.jpg" alt="Amara & Chidi" class="testimonial-avatar" id="testimonial-avatar" />
+            <p class="testimonial-name font-montserrat" id="testimonial-name">Amara & Chidi O.</p>
+            <p class="testimonial-event font-montserrat" id="testimonial-event">Lagos Garden Wedding, 2025</p>
+          </div>
+          <div class="testimonial-nav">
+            <button id="prev-testimonial" class="testimonial-btn" aria-label="Previous testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="testimonial-dots" id="testimonial-dots"></div>
+            <button id="next-testimonial" class="testimonial-btn" aria-label="Next testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SHOP PRESETS BANNER ===== -->
+    <section id="shop" class="shop-section">
+      <div class="shop-wrapper">
+        <div class="shop-inner">
+          <div class="shop-text-group">
+            <p class="shop-label font-montserrat">Ready to elevate your edits?</p>
+            <h3 class="shop-title font-montserrat">Shop My Presets</h3>
+          </div>
+          <a href="#shop" class="btn-shop font-montserrat">
+            Shop Presets
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact-section">
+      <div class="contact-header">
+        <h1 class="contact-title font-cormorant">Let's Get in Touch!</h1>
+        <p class="contact-subtitle font-montserrat">
+          For Wedding Inquiries, please fill the contact form below. For all other inquiries, please email us at
+          <a href="mailto:hello@princewilliams.com" class="underline">hello@princewilliams.com</a>
+        </p>
+      </div>
+      <div class="contact-grid">
+        <!-- Form -->
+        <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label class="form-label font-montserrat">I am a...</label>
+            <select class="form-input font-montserrat" id="role-select">
+              <option value="">Select role</option>
+              <option value="bride">Bride</option>
+              <option value="groom">Groom</option>
+              <option value="planner">Planner</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label font-montserrat">First Name</label>
+              <input type="text" class="form-input font-montserrat" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label font-montserrat">Last Name</label>
+              <input type="text" class="form-input font-montserrat" placeholder="Doe" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label font-montserrat">Email Address</label>
+            <input type="email" class="form-input font-montserrat" placeholder="example@gmail.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label font-montserrat">Instagram Handle</label>
+            <input type="text" class="form-input font-montserrat" placeholder="@yourhandle" />
+          </div>
+          <div class="form-group">
+            <label class="form-label font-montserrat">Phone Number</label>
+            <input type="tel" class="form-input font-montserrat" placeholder="(123) 456-7890" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label font-montserrat">Wedding Date</label>
+              <input type="date" class="form-input font-montserrat" />
+            </div>
+            <div class="form-group">
+              <label class="form-label font-montserrat">Wedding Location</label>
+              <input type="text" class="form-input font-montserrat" placeholder="City, State" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label font-montserrat">Tell us about your wedding</label>
+            <textarea class="form-input form-textarea font-montserrat" placeholder="Share your vision, theme, venue details..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label font-montserrat">Tell us all about you two!</label>
+            <textarea class="form-input form-textarea font-montserrat" placeholder="How did you meet? What makes your love story special?"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label font-montserrat">What draws you to our work?</label>
+            <textarea class="form-input form-textarea font-montserrat" placeholder="What resonated with you about our style?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary font-montserrat" style="width:100%; justify-content:center;">
+            Send Message
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </button>
+          <div id="form-success" class="form-success font-montserrat" style="display:none;">
+            ✓ Message sent! We'll be in touch within 48 hours.
+          </div>
+        </form>
+        <!-- Contact Image (Desktop) -->
+        <div class="contact-img-wrap">
+          <img src="images/about.jpg" alt="Prince Williams Photography" class="contact-img" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-divider">
+      <svg width="100%" height="2" viewBox="0 0 1200 2" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="1" x2="1200" y2="1" stroke="#3E0D62" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="6 6"/>
+      </svg>
+    </div>
+    <div class="footer-grid">
+      <!-- Col 1: Brand + Social -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo font-cormorant">Prince Williams</a>
+        <p class="footer-tagline font-montserrat">Capturing timeless love stories.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="X (Twitter)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Col 2: Quick Links -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-heading font-montserrat">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home" class="footer-link font-montserrat">home</a></li>
+          <li><a href="#about" class="footer-link font-montserrat">about us</a></li>
+          <li><a href="#faqs" class="footer-link font-montserrat">faqs</a></li>
+          <li><a href="#contact" class="footer-link font-montserrat">contact</a></li>
+          <li><a href="#portfolio" class="footer-link font-montserrat">portfolio</a></li>
+        </ul>
+      </div>
+      <!-- Col 3: Legal -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-heading font-montserrat">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link font-montserrat">privacy policy</a></li>
+          <li><a href="#" class="footer-link font-montserrat">terms of use</a></li>
+          <li><a href="#" class="footer-link font-montserrat">refund policy</a></li>
+          <li><a href="#" class="footer-link font-montserrat">license agreement</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy font-montserrat">Copyright &copy; 2026 Prince Williams. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
